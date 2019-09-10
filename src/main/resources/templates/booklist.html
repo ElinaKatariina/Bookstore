@@ -5,6 +5,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+
+	<h1>Books</h1>
+		<table>
+			<tr>
+				<th>Author</th>
+				<th>Title</th>
+				<th>ISBN</th>
+				<th>Year</th>
+				<th>Price</th>
+			</tr>
+			
+			<tr th:each="book : ${books}">
+				<th th:text="${book.author}">author</th>
+				<th th:text="${book.title}">title</th>
+				<th th:text="${book.isbn}">isbn</th>
+				<th th:text="${book.year}">year</th>
+				<th th:text="${book.price}">price</th>
+			</tr>
+		</table>
 		
 	
 

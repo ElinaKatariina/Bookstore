@@ -21,9 +21,6 @@ public class BookController {
 	@Autowired
 	private BookRepository repository;
 	
-	public void showBooks() {
-		List<hh.swd20.BookStore.domain.Book> books = repository.findById('1');
-	}
 	
 	@Bean
 	public CommandLineRunner demo(BookRepository repository) {
@@ -38,14 +35,13 @@ public class BookController {
 	}
 	
 	
-//	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
-//		public String booklist(@ModelAttribute Model model) {
-//		List<Book> books = (List<Book>) repository.findAll();
-//		model.addAttribute("books", books);
-		
-//			return "booklist";	
+	@RequestMapping(value = "/booklist", method = RequestMethod.GET)
+		public String booklist(@ModelAttribute Model model) {
+		List<Book> books = (List<Book>) repository.findAll();
+		model.addAttribute("books", books);
+		return "booklist";	
 	
-//	}
+	}
 	
 }
 
