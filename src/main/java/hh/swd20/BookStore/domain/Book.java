@@ -1,7 +1,17 @@
 package hh.swd20.BookStore.domain;
 
-public class Books {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Book {
 	
+	//attribuutit
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 	private String title;
 	private String author;
 	private int year;
@@ -9,7 +19,7 @@ public class Books {
 	private double price;
 	
 	//konstruktorit
-	public Books() {
+	public Book() {
 		super();
 		this.title = null;
 		this.author = null;
@@ -18,7 +28,7 @@ public class Books {
 		this.price = 0.0;
 	}
 
-	public Books(String title, String author, int year, String isbn, double price) {
+	public Book(String title, String author, int year, String isbn, double price) {
 		super();
 		this.title = title;
 		this.author = author;
