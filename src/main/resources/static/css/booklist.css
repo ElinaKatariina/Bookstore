@@ -1,0 +1,30 @@
+body {
+	background-color: #BC8F8F;
+	top: 20px;
+}
+form {
+	font-family: 'garamond';
+}
+th{
+	font-size: 25px;	
+	border-bottom-style: solid;
+	border-color: #ffffff;
+}
+td{
+	width: 160px;
+	text-align: center;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-color: #ffffff;
+	height: 50px;
+}
+h1{
+	font-family: 'garamond';
+	font-size: 70px;
+	margin-left: 30%;
+	
+}
+a{
+	font-family: 'garamond';
+	font-size: 20px;
+}

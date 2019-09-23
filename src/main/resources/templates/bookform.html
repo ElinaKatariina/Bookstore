@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>New book</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+
+	<h1>New Book</h1>
+	<form action="#" th:action="@{/newbook}" th:object=${book} method="post">
+	
+		<p>Title: <input type="text" th:field=${book.title}/></p>
+		<p>Author: <input type="text" th:field=${book.author}/></p>
+		<p>Year: <input type="text" th:field=${book.year}/></p>
+		<p>ISBN: <input type="text" th:field=${book.isbn}/></p>
+		<p>Price: <input type="text" th:field=${book.price}/></p>
+		<label for="categoryId">Category:</label>
+		<select id="categoryId" th:field="*{category.name}" class="form-control">
+				<option th:each="category: ${categories}" th:value="${category.categoryId}" th:text="${category.name}"></option>
+		</select>
+		
+		<input type="submit" value="Submit"/><input type="reset" value="Reset"/>
+	
+	</form>
+	
+	<a href="/booklist">Bact to Booklist</a>
+		
+	
+
+</body>
+</html>
