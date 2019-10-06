@@ -27,6 +27,12 @@ public class BookController {
 	@Autowired
 	private CategoryRepository Crepo;
 	
+	//Login page
+	@RequestMapping(value = "/login")
+	public String login() {
+		return "login";
+	}
+	
 	//RESTful service to return books
 	@RequestMapping(value= "/books", method = RequestMethod.GET)
 	public @ResponseBody List<Book> bookListRest() {
