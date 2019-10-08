@@ -1,18 +1,18 @@
 package hh.swd20.BookStore;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.core.userdetails.User;
-import ch.qos.logback.classic.Logger;
+
 import hh.swd20.BookStore.domain.Book;
 import hh.swd20.BookStore.domain.BookRepository;
 import hh.swd20.BookStore.domain.Category;
 import hh.swd20.BookStore.domain.CategoryRepository;
+import hh.swd20.BookStore.domain.User;
 import hh.swd20.BookStore.domain.UserRepository;
-
 
 @SpringBootApplication
 public class BookStoreApplication {
@@ -41,10 +41,12 @@ public class BookStoreApplication {
 						("The Crown", "Robert Lacey", 2017, "978-951-1-32191-0", 26.95, cRepository.findByName("Biography").get(0)));
 			
 			//Create users
-			User user1 = new User("user", "user", "USER");
-			User user2 = new User("admin", "admin", "ADMIN");
+			User user1 = new User("user", "$2a$10$yNpJp8q9BKsHUpdaFLLXhu2UtIDN1yBe.uHedEixG4QIcftP76fAe", "USER");
+			User user2 = new User("admin", "$2a$10$yUEOx8AlF8TIi7ztCft.Hu4x6MKtqAK0zCaYGHlNQn9QChzLHBKbu", "ADMIN");
 			userRepo.save(user1);
 			userRepo.save(user2);
+			
+			
 				
 				
 			log.info("fetch all books");

@@ -50,8 +50,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	}
 	
 	
+	
 	/*
-	 * @Bean
+	 @Bean
 	@Override
 	public UserDetailsService userDetailsService() {
 		List<UserDetails> users	= new ArrayList();
